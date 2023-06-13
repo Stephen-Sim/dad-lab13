@@ -1,4 +1,4 @@
-package Exercise6.server;
+package Exercise7.server;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -17,7 +17,10 @@ public class TranslatorServerApplication {
         int totalRequest = 0;
 
         Translator translator = new Translator();
-
+        
+        TranslatorServerFrame serverFrame = new TranslatorServerFrame();
+        serverFrame.setVisible(true);
+        
         // Server needs to be alive forever
         while (true) {
             // Accept client request for connection
@@ -46,6 +49,9 @@ public class TranslatorServerApplication {
             inputStream.close();
             outputStream.close();
             clientSocket.close();
+
+            serverFrame.incrementTotalRequests();
+            serverFrame.addRequestDetail(translatedText);
         }
     }
 

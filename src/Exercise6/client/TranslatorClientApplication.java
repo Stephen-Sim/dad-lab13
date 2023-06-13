@@ -8,7 +8,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 
-public class TranslateClientApplication {
+public class TranslatorClientApplication {
     public static void main(String[] args) {
 
         int serverPort = 4228;
